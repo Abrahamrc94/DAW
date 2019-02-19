@@ -1,0 +1,38 @@
+Abrimos terminal
+Creamos los directorios: sudo mkdir home/{Gerencia,Administracion,Programacion,Sistemas}
+Creamos grupos:
+    sudo groupadd Gerencia
+    sudo groupadd Administracion
+    sudo groupadd Programacion
+    sudo groupadd Sistemas
+Creamos usuarios con sus directorios:
+    sudo useradd -d /home/Gerencia/ -s /bin/bash jefGer -g 1053
+    sudo useradd -d /home/Gerencia/ -s /bin/bash ger1 -g 1053
+    sudo useradd -d /home/Administracion/ -s /bin/bash jefAdm -g 1054
+    sudo useradd -d /home/Administracion/ -s /bin/bash adm1 -g 1054
+    sudo useradd -d /home/Programacion/ -s /bin/bash jefProg -g 1055
+    sudo useradd -d /home/Programacion/ -s /bin/bash prog1 -g 1055
+    sudo useradd -d /home/Sistemas/ -s /bin/bash jefSist -g 1056
+    sudo useradd -d /home/Sistemas/ -s /bin/bash sist1 -g 1056
+Creamos contraseña para cada usuario utilizando su nombre:
+    sudo passwd jefGer
+    sudo passwd ger1
+    sudo passwd jefAdm
+    sudo passwd adm1
+    sudo passwd jefProg
+    sudo passwd prog1
+    sudo passwd jefSist
+    sudo passwd sist1
+Cambiamos permisos de directorios y añadimos a cada grupo su directorio con su permiso:
+    sudo chmod 740 /home/Gerencia
+    sudo chmod 740 /home/Administracion/
+    sudo chmod 740 /home/Programacion/
+    sudo chmod 740 /home/Sistemas/
+Cambiamos grupo propietario:
+    sudo chgrp -R Gerencia /home/Gerencia/ 
+    sudo chgrp -R Administracion /home/Administracion/ 
+    sudo chgrp -R Programacion /home/Programacion/ 
+    sudo chgrp -R Sistemas /home/Sistemas/
+Entramos en cada usuario para crear sus directorios Documentos y Proyectos:
+    su <usuario> 
+    mkdir -p Documentos/{Personales,Laborales} Proyectos/{Terminados,Actuales}

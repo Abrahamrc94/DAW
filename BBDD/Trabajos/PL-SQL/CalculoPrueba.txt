@@ -1,0 +1,16 @@
+CREATE OR REPLACE PROCEDURE sueldo
+IS
+s_Neto NUMBER(5):= (60*38);
+impuesto NUMBER(5,2) := (s_Neto * 0.155);
+s_impuesto NUMBER (7,2) := (s_Neto - impuesto);
+BEGIN
+DBMS_OUTPUT.PUT_LINE('SUELDO NETO: ' || s_Neto || '€');
+DBMS_OUTPUT.PUT_LINE('IMPUESTO: ' || impuesto || '€');
+DBMS_OUTPUT.PUT_LINE('SUELDO IMPUESTO: ' || s_impuesto || '€');
+END;
+/
+
+BEGIN
+sueldo;
+END;
+/

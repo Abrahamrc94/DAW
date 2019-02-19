@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Agenda>
+	<Contactos>
+		<Contacto>
+			<Nombre>Pepe</Nombre>
+			<Apellidos>Patrio Cabeza</Apellidos>
+			<Empresa>Gasolineras Shell</Empresa>
+			<TelefonFijo>954444444</TelefonFijo>
+			<Telefonotrabajo>666666666</Telefonotrabajo>
+			<CorreoElectronicopersonal>Pepe@ejemplo.com</CorreoElectronicopersonal>
+			<CorreoElectronicoprofesional>Pepe_trabajo@ejemplo.com</CorreoElectronicoprofesional>
+			<PaginaWeb>www.pepe.com</PaginaWeb>
+			<PerfilFacebook>Pepe Patrio Cabeza</PerfilFacebook>
+			<PerfilTwitter>@PepePatrioCabeza</PerfilTwitter>
+			<Direccion>Calle Lala</Direccion>
+			<Cumpleaños>25 Julio 1986</Cumpleaños>
+		</Contacto>
+		<Contacto>
+			<Nombre></Nombre>
+			<Apellidos></Apellidos>
+			<Empresa></Empresa>
+			<TelefonFijo></TelefonFijo>
+			<Telefonotrabajo></Telefonotrabajo>
+			<CorreoElectronicopersonal></CorreoElectronicopersonal>
+			<CorreoElectronicoprofesional></CorreoElectronicoprofesional>
+			<PaginaWeb></PaginaWeb>
+			<PerfilFacebook></PerfilFacebook>
+			<PerfilTwitter></PerfilTwitter>
+			<Direccion></Direccion>
+			<Cumpleaños></Cumpleaños>
+		</Contacto>
+	</Contactos>
+</Agenda>

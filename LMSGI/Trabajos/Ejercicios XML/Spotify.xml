@@ -1,0 +1,12 @@
+<? xml versión="1.0" encoding="encoding="UTF-8"?>
+
+<album1>
+	<autor>ACDC</autor>
+		<cancion1> 
+			<nombre>Black in black<nombre/>
+			<formato>MP3</formato>
+		</cancion1>
+		<cancion2>
+			<nombre> ... </nombre>
+			<formato>... </formato>
+		</cancion2>

@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <h1>Menu</h1>
+        <h2>H2</h2>
+        <h3>H3</h3>
+        <link rel="stylesheet" type="text/css" href="Prueba_formulario.css" />
+    </head>
+    <body>
+        <p>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</p>
+        <div id="cabecera">
+        <form>
+            Elija un color: <br/>
+            <select name="color">
+            <option value="1" selected>Verde</option>
+            <option value="2">Rojo</option>
+            <option value="3">Azul</option>
+            <option value="4">Amarillo</option>
+            </select>
+            <br/>
+            Sugerencias: <br/>
+            <textarea rows="5" cols="10" name="sugerencias">
+            </textarea><br/>
+            <select>
+                <optgroup label="Primer grupo">
+                    <option value="uno">Un</option>
+                    <option value="dos">Dos</option>
+                    <option value="tres">Tres</option>
+                </optgroup>
+                <optgroup label="Segundo grupo">
+                    <option value="cuatro">Cuatro</option>
+                    <option value="cinco">Cinco</option>
+                    <option value="seis">Seis</option>
+                </optgroup>
+            </select>
+        </form>
+        </div>
+        <div id="contenido">
+        <form name="formulario" action="cualquiera.html" method="post">
+            Acepto las condiciones
+            <input type="check" value="acepto"
+                onclick="document.formulario.enviar.disabled=!document.formulario.enviar.disabled">
+            <br/>
+            <input type="submit" name="enviar" value="Enviar" disabled>
+            <input type="text" name="mitexto" value="valor por defecto" size="tamano" maxlength="longitudMaxima"/>
+            <input type="password" name="clave" value="clave por defecto" size="tamano" maxlength="longitudMaxima"/>
+            <br/>
+            <input type="radio" name="musica" value="jazz">Jazz</input>
+            <input type="radio" name="musica" value="pop">Pop</input>
+            <input type="radio" name="musica" value="rock">Rock</input>
+            <br/>
+            <input type="checkbox" name="medico">Médico</input>
+            <input type="checkbox" name="abogado">Abogado</input>
+            <input type="checkbox" name="profesor">Profesor</input>
+            <br/>
+            </div>
+            <div id="pie">
+            <input type="image" src="facebook.png"/>
+            <br/>
+            <input type=“reset”/>
+            <br/>
+            <input type="hidden" name="nombre" value="datos"/>
+            <br/>
+            <input type="button" value="pulsar" onclick="alert('Mensaje');"/>
+            <br/>
+            <input type="file" name="fichero"/>
+            <br/>
+            <label for="nombre">Nombre</label>
+            <br/>
+            <div id="cabecera">HOLA</div>
+            <br/>
+            <meta name="author" content="Jose" />
+            <meta name="generator" content="WordPress 2.8.4" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> <!-- codificación -->
+            <meta name="copyright" content="mmblog.es"/>
+            <meta name="robots" content="index, follow" /> <!-- comportamiento de los buscadores -->
+            <meta name="keywords" content="web, html" />
+            <meta name="description" content="Artículos innovación educativa" />
+            <br/>
+            </div>
+        </form>
+    </body>
+</html>

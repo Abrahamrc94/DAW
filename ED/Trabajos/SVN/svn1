@@ -1,0 +1,22 @@
+1. mkdir destruction
+2. cd destruction
+3. svn co https://svn.riouxsvn.com/dst
+4. touch stage_me.txt
+5. svn add stage_me.txt
+6. svn rm --keep-local stage_me.txt
+7. svn add stage_me.txt
+8. svn delete stage_me.txt
+9. touch commit_me.txt
+10. svn add commit_me.txt
+11. svn commit -m "adding commit_me.txt"
+12. touch second.txt
+13. svn add second.txt
+14. svn commit -m "adding second.txt"
+15. svn log https://svn.riouxsvn.com/dst (No muestra el SHA)
+16. No se puede, el commit no se elimina en svn log https://svn.riouxsvn.com/dst.
+17. Da error al añadir con svn add second.txt
+18. No se puede porque no has añadido al área de preparación.
+19. No se puede
+20. No se puede
+21. No se puede
+22. svn commit -m "palmadita"

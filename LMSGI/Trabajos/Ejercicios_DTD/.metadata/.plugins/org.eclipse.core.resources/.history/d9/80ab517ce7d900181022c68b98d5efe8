@@ -1,0 +1,9 @@
+<!ATTLIST Lista xmlns:xsi http://www.w3.org/2001/XMLSchema-instace NMTOKEN #REQUIRED xsi:noNamespaceSchemaLocation 'ejercicio3.xsd' NMTOKEN #REQUIRED>
+<!ATTLIST Alumno id CDATA #REQUIRED>
+<!ELEMENT Alumno (Nombre+,Apellidos+)>
+<!ELEMENT Nombre (#PCDATA)>
+<!ELEMENT Apellidos (#PCDATA)>
+<!ATTLIST Asignatura codigo CDATA #REQUIRED>
+<!ELEMENT Aisgnatura (Dia,Hora)>
+<!ELEMENT Dia (#PCDATA)>
+<!ELEMENT Hora (#PCDATA)>

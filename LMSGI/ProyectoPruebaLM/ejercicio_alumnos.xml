@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Lista xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation='ejercicio_alumnos.xsd' >
+<Alumno id="1">
+<Nombre>Arturo</Nombre>
+<Apellidos>Pérez Rubio</Apellidos>
+</Alumno>
+<Alumno id="2">
+<Apellidos>Rodríguez García</Apellidos>
+<Nombre>Manuel</Nombre>
+</Alumno>
+<Asignatura codigo="059">Inglés
+<Día>Miércoles</Día>
+<Hora>12:00</Hora>
+</Asignatura>
+</Lista>

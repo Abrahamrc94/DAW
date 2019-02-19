@@ -1,0 +1,27 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Lista">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="Alumno" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="Nombre"/>
+              <xs:element type="xs:string" name="Apellidos"/>
+            </xs:sequence>
+            <xs:attribute type="xs:byte" name="id" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Asignatura">
+          <xs:complexType mixed="true">
+            <xs:sequence>
+              <xs:element type="xs:string" name="Dia"/>
+              <xs:element type="xs:string" name="Hora"/>
+            </xs:sequence>
+            <xs:attribute type="xs:byte" name="codigo"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs1:attribute ref="xs:noNamespaceSchemaLocation" xmlns:xs="http://www.w3.org/2001/XMLSchema-instace" xmlns:xs1="http://www.w3.org/2001/XMLSchema"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

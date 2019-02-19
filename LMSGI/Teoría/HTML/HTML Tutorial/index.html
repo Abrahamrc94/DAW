@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta charset="utf-8">
+
+        <meta name="author" content="Nombre del autor">
+
+        <meta name="description" content="Descripcion del sitio web">
+
+        <meta name="keywords" content="Palabras que busca el buscador de internet al buscar">
+
+        <title>Aqui va el titulo</title>
+
+        <!--Icono que se ven en la pestaña-->
+        <link rel="icon" href="img/google.png">
+    </head>
+
+    <body>
+        <!--"<form>" para formulario, para enviarlo a una pagina metemos (<form action="enlace" method="POST">)-->
+        <!--"<center>" para centrar, "placeholder" para añadir un texto guia, "type" para declarar el tipo de formulario, "value" para poner por defecto una informacion, "readonly" para solo lectura no modificable-->
+        <center>
+            <h3>Formulario</h3>
+            <form>
+                <input type="text" placeholder="Entrada de texto" value="Jose" readonly>
+            </form>
+        </center>
+
+        <!--"<label>" activa el objeto con un click, "for" para señalar que esta es la entrada para el texto-->
+        <center>
+            <h3>Formulario</h3>
+            <form>
+                <label for="texto">Entrada de texto</label>
+                <input id="texto" type="text" placeholder="Entrada de texto" value="" required>
+
+                <br>
+                <br>
+
+                <label for="correo">Entrada de correo</label>
+                <input id="correo" type="email" placeholder="Entrada de correo" value="" required>
+                
+                <br>
+                <br>
+
+                <label for="pass">Entrada de contraseñas</label>
+                <input id="pass" type="password" placeholder="Entrada de pass" value="" required>
+                                
+                <br>
+                <br>
+
+                <input id="number" type="number" placeholder="Entrada de numeros" value="1" min="0" max="3">
+                                
+                <br>
+                <br>
+
+                <!--Para hacer un selector de seleccion multiple, esto se debe colocar con un "<option>" dentro, para añadir las opciones-->
+                <select>
+                    <option>1</option>
+                    <option>2</option>
+                </select>
+
+                <br>
+                <br>
+
+                <input type="checkbox" id="rojo"><label for="rojo">rojo</label>
+                <input type="checkbox" id="azul>"><label for="azul">azul</label>
+                
+                <br>
+                <br>
+
+                <!--Al poner "name="radio"" solo podemos elegir 1 de los 2, para enviar via POST por ejemplo-->
+                <input type="radio" id="blanco" name="radio"><label for="blanco">Blanco</label>
+                <input type="radio" id="negro" name="radio"><label for="Negro">Negro</label>
+
+                <br>
+                <br>
+
+                <input type="submit" value="Enviar">
+
+            </form>
+        </center>
+
+        <!--"id" para añadir un identificador unico-->
+        <!--La etiqueta "<div>" sirve para empaquetar-->
+        <!--Cabecera-->
+        <header>
+            <div id="Logotipo">Logotipo</div>
+        </header>
+
+        <nav>Barra de navegacion</nav>
+
+        <section>Seccion principal</section>
+
+        <!--"class" es para crear una clase-->
+        <!--Columna-->
+        <aside>
+
+            <div class="noticias">Noticia1</div>
+            <div class="noticias">Noticia2</div>
+            <div class="noticias">Noticia3</div>
+
+        </aside>
+
+        <article>Articulos</article>
+
+        <!--Las etiquetas para titulo solo van de "h1" a "h6"-->
+        <h1>Titulo</h1>
+        <h2>Titulo</h2>
+        <h3>Titulo</h3>
+        <h4>Titulo</h4>
+        <h5>Titulo</h5>
+        <h6>Titulo</h6>
+
+        <p>Esto es un <b>parrafo</b>, <br>esto es otro parrafo</p>
+
+        <!--Linea-->
+        <hr>
+
+        <a href="#">Vinculo</a>
+
+        <!--Esta etiqueta "figure" sirve para colocar mejor la imagen-->
+        <figure>
+            <img src="img/google.png">
+        </figure>
+        <figcaption>Pie de foto</figcaption>
+
+        <ol>
+            <li>Uno</li>
+            <li>Dos</li>
+            <li>Tres</li>
+        </ol>
+
+        <ul>
+            <li>Uno</li>
+            <li>Dos</li>
+            <li>Tres</li>
+        </ul>
+
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Mes</th>
+                    <th>Dias</th>
+                </tr>
+            </thead>
+
+            <!--La etiqueta "td" se diferencia de "th" en que "th" es para la cabecera de la tabla, pintando asi en negrita la cabecera y la etiqueta "td" deja las letras normales, para diferenciarlo mejor-->
+            <tbody>
+                <tr>
+                    <td>Enero</td>
+                    <td>31</td>
+                </tr>
+                <tr>
+                    <td>Febrero</td>
+                    <td>28</td>
+                </tr>
+            </tbody>
+
+        </table>
+
+        <!--Valores de manera grafica, con minimo, maximo, y high pinta de otro color la barra cuando lo supera-->
+        <h1>Resultados</h1>
+        <p>Uno: <meter value="94" min="0" max="100" high="90"></meter></p>
+        <p>Dos: <meter value="50" min="0" max="100" high="90"></meter></p>
+        <p>Tres: <meter value="15" min="0" max="100" high="90"></meter></p>
+
+        <h2>Resultados de meses</h2>
+        <p>Enero: <progress value="94" min="0" max="100"></progress></p>
+        <p>Febrero: <progress value="60" min="0" max="100"></progress></p>
+
+        <!--Introducir un audio, "autoplay" hace que suene automaticamente, "controls" mete controles para el audio, "loop" es para que se repita indefinidamente, "preload" hace que se cargue le audio automaticamente-->
+        <audio autoplay controls loop preload="auto">
+
+            <!--Ogg VORBIS (.ogg) (Firefox, Chrome, Opera)-->
+            <!--MP3 (.mp3) (Safari, Chrome, Internet Explorer, iOS)-->
+            <!--WAV (.wav) (Firefox, Chrome, Safari, Opera)-->
+            <!--ACC (.m4a, .m4b, .m4p, .mp4, .acc) (No dice ningun buscador)-->
+            <!--En la pagina "www.Online-Convert.com/es" puedes convertir audios a cualquier formato-->
+
+            <source src="audio/casito.mp3" type="audio/mp3">
+
+        </audio>
+
+        <video autoplay controls loop width="500" height="200">
+
+            <!--THEORA OGG (.ogv) (Firefox, Chrome, Opera)-->
+            <!--MP4 (.mp4) (Safari, Chrome, Internet Explorer, iOS, Android)-->
+            <!--WEBM (.webm) (Todos los navegadores) (Enfocado a HTML5)-->
+            <!--En la pagina "www.Online-Convert.com/es" puedes convertir audios a cualquier formato-->
+
+            <source src="video/Asphalt9.mp4" type="video/mp4">
+
+        </video>
+
+        <!--Para vincular enlaces solo debemos dejar la etiqueta "iframe"-->
+
+        <!--Vincular link de youtube, "frameborder" elimina bordes en el marco del video, "allowfullscreen" permite la opcion de pantalla completa-->
+        <iframe width="500" height="280" src="https://www.youtube.com/embed/l-aS0XSmShM/e" frameborder="0" allowfullscreen></iframe>
+
+        <!--Vincular video de Vimeo, en compartir viene el iframe (Solo cogemos desde la apertura de etiqueta de iframe hasta su cierre de etiqueta)-->
+        <iframe src="https://player.vimeo.com/video/114614694" width="500" height="280" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+        <!--Vincular audio de Soundcloud, en compartir, seleccionar la pestaña "embed", ("integrar" en español)-->
+        <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/33866723&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+
+        <!--Vincular revistas por ejemplo de la pagina calameo, ir a la pestaña "embed/incrustar/integrar", acto seguido le damos a leer el articulo y copiamos el link y lo sustituimos por el contenido del "src"-->
+        <iframe src="https://es.calameo.com/read/005355685c99a64a11635" width="100%" height="600" frameborder="0" scrolling="no" allowtransparency allowfullscreen style="margin:0 auto;"></iframe>
+
+        <!--Vincular mapas, buscamos ubicacion, pulsamos en compartir y en la pestaña "Insertar un mapa" y copiamos el iframe-->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d194348.1398105032!2d-3.8196206842121603!3d40.43786975948415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422997800a3c81%3A0xc436dec1618c2269!2sMadrid!5e0!3m2!1ses!2ses!4v1547153614940" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+        <!--Vincular paginas externas, crea la etiqueta iframe, inserta la url de la pagina y añade las etiquetas para su personalizacion-->
+        <iframe src="https://www.marca.com/" width="100%" height="600" scrolling="auto" frameborder="0" AllowTransparency="true"></iframe>
+
+        <footer>Pie de pagina</footer>
+
+    </body>
+
+</html>

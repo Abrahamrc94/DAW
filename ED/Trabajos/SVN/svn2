@@ -1,0 +1,15 @@
+1. mkdir branch_time
+2. cd branch_time
+3. svn co https://svn.riouxsvn.com/branchtime
+4. No se puede en un solo comando. (touch first.txt && svn add first.txt && svn commit -m "a")
+5. svn cp https://svn.riouxsvn.com/branchtime/trunk https://svn.riouxsvn.com/branchtime/branches/amazing_feature
+6. mkdir amazing_feature
+cd amazing_feature
+svn co https://svn.riouxsvn.com/branchtime/branches/amazing_feature
+cd amazing_feature
+7. echo "this is the best file">best.txt
+8. svn add best.txt
+9. svn commit -m "added best.txt"
+10. cd ../..
+11. cd trunk 
+svn merge --reintegrate https://svn.riouxsvn.com/branchtime/branches/amazing_feature

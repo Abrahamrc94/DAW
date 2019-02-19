@@ -1,0 +1,17 @@
+1. Show concatenated the DNI and name of the students that live in Madrid. 
+
+    SELECT nombre ||' '|| persona.dni
+    FROM alumno, persona
+    WHERE persona.dni = alumno.dni 
+    AND (persona.ciudad = 'Madrid');
+
+2. Show the name of the students who have enrolled 1 time in any subject.
+
+    SELECT nombre
+    FROM persona
+    JOIN alumno
+    ON persona.dni = alumno.dni
+    JOIN alumno_asignatura
+    ON alumno.idalumno = alumno_asignatura.idalumno
+    WHERE alumno_asignatura.numeromatricula = 1;
+

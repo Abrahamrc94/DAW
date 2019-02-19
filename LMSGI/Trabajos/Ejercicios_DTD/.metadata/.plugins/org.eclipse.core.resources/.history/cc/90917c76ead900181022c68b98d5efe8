@@ -1,0 +1,10 @@
+<!ATTLIST Lista xmlns:xsi NMTOKEN #REQUIRED>
+<!ELEMENT Lista (Alumno+,Aisgnatura)>
+<!ATTLIST Alumno id CDATA #REQUIRED>
+<!ELEMENT Alumno (Nombre+,Apellidos+)>
+<!ELEMENT Nombre (#PCDATA)>
+<!ELEMENT Apellidos (#PCDATA)>
+<!ATTLIST Asignatura codigo CDATA #REQUIRED>
+<!ELEMENT Aisgnatura (Dia,Hora)>
+<!ELEMENT Dia (#PCDATA)>
+<!ELEMENT Hora (#PCDATA)>

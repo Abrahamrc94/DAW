@@ -1,0 +1,21 @@
+<? xml versión="1.0" encoding="encoding="ISO-8859-1"?>
+
+<album1>
+	<autor>ACDC</autor>
+	<titulos>
+	Black in black	
+	Highway to Hell
+	Thunderstruck
+	</titulos>
+	<formato>MP3</formato>
+</album1>
+
+<album2>
+	<autor>Borgore</autor>
+	<titulos>
+	Ratchet
+	Unicorn zombie apocalypse
+	</titulos>
+	<formato>MP3</formato>
+</album2>
+

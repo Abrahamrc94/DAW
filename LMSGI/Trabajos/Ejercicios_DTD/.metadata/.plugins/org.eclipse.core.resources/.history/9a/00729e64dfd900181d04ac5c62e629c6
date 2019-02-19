@@ -1,0 +1,9 @@
+<!ELEMENT Tiendas(Tienda)*>
+<!ELEMENT Tienda(Nombre+, Dirección+, Distribuidor*, Móvil+)>
+<!ELEMENT Nombre(#PCDATA)>
+<!ELEMENT Dirección(#PCDATA)>
+<!ELEMENT Distribuidor(#PCDATA)>
+<!ELEMENT Móvil(Código_del_modelo, Marca, Características)>
+<!ELEMENT Código_del_modelo(#PCDATA)>
+<!ELEMENT Marca(#PCDATA)>
+<!ELEMENT Características(#PCDATA)>

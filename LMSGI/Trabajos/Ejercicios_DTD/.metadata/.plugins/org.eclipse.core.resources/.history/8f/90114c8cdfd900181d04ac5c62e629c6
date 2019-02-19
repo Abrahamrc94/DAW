@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Lista[
+<!ELEMENT Lista(Alumno)+>
+<!ATTLIST Alumno id CDATA #REQUIRED>
+<!ELEMENT Alumno(Nombre+, Apellidos+)>
+<!ELEMENT Nombre(#PCDATA)>
+<!ELEMENT Apellidos (#PCDATA)>
+<!ATTLIST Asignatura id CDATA #REQUIRED>
+<!ELEMENT Asignatura(Dia*, Hora?)>
+<!ELEMENT Dia(#CDATA)>
+<!ELEMENT Hora(#PCDATA)>
+]>

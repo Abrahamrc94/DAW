@@ -1,0 +1,4 @@
+1. Expresion regular para mostrar todos los clientes que empiecen por 'E' o 'D', ya sea en mayúsculas o minúsculas.
+    SELECT * FROM clientes WHERE regexp like (lower(nombre), '^[ed](*)');
+
+    ^[0-9]{8}-[a-z]{1}$

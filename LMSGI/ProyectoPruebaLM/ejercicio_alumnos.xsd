@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<xsd:element name="Lista">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element maxOccurs="10" name="Alumno" type="tipoAlumno"/>
+				<xsd:element name="Asignatura" type="tipoAsignatura"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType name="tipoAlumno">
+		<xsd:all>
+			<xsd:element name="Nombre" type="xsd:string"/>
+			<xsd:element name="Apellidos" type="xsd:string"/>
+		</xsd:all>
+		<xsd:attribute name="id" use="required"/>
+	</xsd:complexType>
+	<xsd:complexType mixed="true" name="tipoAsignatura">
+		<xsd:sequence>
+			<xsd:element name="Día" type="diadelasemana"/>
+			<xsd:element name="Hora" type="xsd:string"/>
+		</xsd:sequence>
+		<xsd:attribute name="codigo" use="required"/>
+	</xsd:complexType>
+	<xsd:simpleType name="diadelasemana">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="Lunes"/>
+			<xsd:enumeration value="Martes"/>
+			<xsd:enumeration value="Miércoles"/>
+			<xsd:enumeration value="Jueves"/>
+			<xsd:enumeration value="Viernes"/>
+			<xsd:enumeration value="Sabado"/>
+			<xsd:enumeration value="Domingo"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

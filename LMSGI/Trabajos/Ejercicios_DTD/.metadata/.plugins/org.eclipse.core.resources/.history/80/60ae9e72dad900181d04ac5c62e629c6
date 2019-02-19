@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Tiendas>
+    <Tienda>
+        <Nombre>Jorange</Nombre>
+        <Dirección>Avenida de Shiva</Dirección>
+        <Distribuidor>Xing xang</Distribuidor>
+        <Móvil>
+            <Código_del_modelo>43232323</Código_del_modelo>
+            <Marca>Samsong</Marca>
+            <Características>Bonito, bueno, barato</Características>
+        </Móvil>
+    </Tienda>
+    <Tienda>
+        <Nombre>PacoPhone</Nombre>
+        <Dirección>Calle Pino</Dirección>
+        <Distribuidor>Noria</Distribuidor>
+        <Móvil>
+            <Código_del_modelo>4521</Código_del_modelo>
+            <Marca>Noria</Marca>
+            <Características>Malo, feo, caro</Características>
+        </Móvil>
+    </Tienda>
+</Tiendas>

@@ -1,0 +1,8 @@
+create or replace trigger kilometros
+after insert on alquileres
+for each row
+begin
+    update vehiculos
+    set kilometros = kilometros + :new.kilometros
+end;
+/

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Tiendas SYSTEM "/home/joseatr/Documentos/DAW/LMSGI/Trabajos/Ejercicios_DTD/DTD1.dtd">
+<Tiendas>
+    <Tienda>
+        <Nombre></Nombre>
+        <Dirección>Avenida de Shiva</Dirección>
+        <Distribuidor>Xing xang</Distribuidor>
+        <Móvil>
+            <Código_del_modelo>43232323</Código_del_modelo>
+            <Marca></Marca>
+            <Características>Bonito, bueno, barato</Características>
+        </Móvil>
+    </Tienda>
+    <Tienda>
+        <Nombre></Nombre> 
+        <Dirección>Calle Pino</Dirección>
+        <Distribuidor>Noria</Distribuidor>
+        <Móvil>
+            <Código_del_modelo>4521</Código_del_modelo>
+            <Marca></Marca>
+            <Características>Malo, feo, caro</Características>
+        </Móvil>
+    </Tienda>
+</Tiendas>

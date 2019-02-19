@@ -1,0 +1,2 @@
+<!ELEMENT Lista(Alumno)+>
+<!ATTLIST Alumno id CDATA "1">

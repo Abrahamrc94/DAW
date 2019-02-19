@@ -1,0 +1,1 @@
+INDEX VERSION 1.131+/home/joseatr/Documentos/DAW/LMSGI/Trabajos/Ejercicios_DTD/.metadata/.plugins/org.eclipse.jdt.core

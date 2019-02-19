@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsi:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema">
+	<xsi:element name = "BDsms">
+		<xsi:complexType>
+			<xsi:sequence>
+				<xsi:element name = "sms" minOccurs = "0" maxOccurs = "unbounded">
+					<xsi:complexType>
+						<xsi:sequence>
+							<xsi:element name = "telefono" type = "xsi:string"/>
+							<xsi:element name = "fecha" type = "xsi:string"/>
+							<xsi:element name = "hora" type = "xsi:string"/>
+							<xsi:element name = "mensaje" type = "xsi:string"/>
+						</xsi:sequence>
+					</xsi:complexType>
+				</xsi:element>
+			</xsi:sequence>
+		</xsi:complexType>
+	</xsi:element>
+</xsi:schema>

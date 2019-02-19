@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<biblioteca xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:noNamespaceSchemaLocation="Ej6.xsd">
+	<libro codigo="123" ubicacion="estanteria 1">
+		<autor>Miguel de Cervantes Saavedra</autor>
+		<titulo>El Quijote de la Mancha</titulo>
+	</libro>
+	<libro codigo="1023" ubicacion="estanteria 3">
+		<autor>Pablo Neruda</autor>
+		<titulo>Veinte poemas de amor y una canción desesperada</titulo>
+	</libro>
+</biblioteca>
