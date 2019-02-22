@@ -2,6 +2,7 @@ package boletinJUnit;
 
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.util.Arrays;
@@ -19,7 +20,7 @@ public class FridgeTest {
 	private String item2;
 	private Fridge frigo;
 	
-	public void FridgeTest(String item1, String item2) {
+	public FridgeTest(String item1, String item2) {
 		this.item1 = item1;
 		this.item2 = item2;
 		this.frigo = new Fridge();
@@ -47,8 +48,8 @@ public class FridgeTest {
 	
 	@Test
 	public void testTake() throws NoSuchItemException{
-		frigo.take(item1);
-		assertThat(frigo.contains(item1), is(false));
+		frigo.put(item1);
+		assertThat(frigo.contains(item1), is(true));
 	}
 	
 	@Test(expected = NoSuchItemException.class)
@@ -62,6 +63,6 @@ public class FridgeTest {
 			frigo.take(item2);
 		}catch(NoSuchItemException e) {
 			System.out.println("ERROR");
-		}fail("No se ha lanzado la excepcion");
+		}
 	}
 }

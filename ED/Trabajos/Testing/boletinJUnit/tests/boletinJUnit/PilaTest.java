@@ -24,7 +24,9 @@ public class PilaTest {
 		Pila p = new Pila();
 		assertEquals(null, p.pop());
 		p.push(3);
-		assertEquals(p.pop(), p.pop());
+		assertEquals(3, p.pop(),0);
+		p.pop();
+		assertEquals(null, p.pop());
 	}
 
 }

@@ -20,8 +20,8 @@ public class SuscripcionTest {
 	
 	
 	public SuscripcionTest(int precio, int periodo, double precioMes) {
-		this.periodo = precio;
-		this.precio = periodo;
+		this.precio = precio;
+		this.periodo = periodo;
 		this.precioMes = precioMes;
 	}
 	
@@ -36,7 +36,7 @@ public class SuscripcionTest {
 	@Test
 	public void testPrecioPorMes() {
 		subs = new Subscripcion(precio, periodo);
-		assertEquals("Pasado Test" + precio, precioMes, subs.precioPorMes(),0);
+		assertEquals("Pasado test" + precioMes, precioMes, subs.precioPorMes(),0);
 		System.out.println("Precio: " + precio);
 	}
 	
