@@ -6,8 +6,5 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="src" path="tests"/>
-	<classpathentry kind="lib" path="/home/estudiante/Documents/DAW/ED/Trabajos/hamcrest-all-1.3.jar"/>
-	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
