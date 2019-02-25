@@ -35,7 +35,7 @@ public class Credito extends Tarjeta
 		mCuentaAsociada.ingresar(x);
 	}
 	
-	public void pagoEnEstablecimiento(String datos, double x) throws Exception 
+	public void pagoEnEstablecimiento(String datos, double x) throws Exception
 	{
 		Movimiento m=new Movimiento();
 		m.setConcepto("Compra a credito en: " + datos);
@@ -59,15 +59,15 @@ public class Credito extends Tarjeta
 		return mCredito-getSaldo();
 	}
 	
-	public void liquidar(int mes, int año) 
+	public void liquidar(int mes, int anyo) 
 	{
 		Movimiento liq=new Movimiento();
-		liq.setConcepto("Liquidacion de operaciones tarj. credito, " + (mes+1) + " de " + (año+1900));
+		liq.setConcepto("Liquidacion de operaciones tarj. credito, " + (mes+1) + " de " + (anyo+1900));
 		double r=0.0;
 		for (int i=0; i<this.mMovimientos.size(); i++) 
 		{
 			Movimiento m=mMovimientos.elementAt(i);
-			if (m.getFecha().getMonth()+1==mes && m.getFecha().getYear()+1900==año)
+			if (m.getFecha().getMonth()+1==mes && m.getFecha().getYear()+1900==anyo)
 				r+=m.getImporte();
 		}
 		liq.setImporte(r);
