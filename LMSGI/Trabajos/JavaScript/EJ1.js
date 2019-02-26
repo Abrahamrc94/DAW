@@ -46,30 +46,85 @@ console.log(palabras[0]);
 console.log(palabras[4]);
 console.log(palabras.length);
 console.log(palabras.sort());
-*/
+
 //EJ5
 class Coche{
 
     constructor(marca, modelo, anyo){
+
         this.marca = marca;
         this.modelo = modelo;
         this.anyo = anyo;
-
-
-    }
-    mostrar(){
-        return `Marca: ${this.marca}, Modelo: ${this.modelo}, Anyo: ${this.anyo}`;
     }
 }
 
 const uno = new Coche("Ferrari", "Pepino", 1456);
 const dos = new Coche("Toyota", "Pepinaco", 23);
-const tres = new Coche("Audi", "Mas pepino aun", 2316514);
-const cuatro = new Coche("Porche", "El mejor de los 5", 456);
-const cinco = new Coche("BMW", "Este es mejor que el cuatro", 23145);
+const tres = new Coche("Porche", "El mejor de los 4", 456);
+const cuatro = new Coche("BMW", "Este es mejor que el tercero", 23145);
 
-console.log(uno.mostrar());
-console.log(dos.mostrar());
-console.log(tres.mostrar());
-console.log(cuatro.mostrar());
-console.log(cinco.mostrar());
+document.write('<table border="1px">'+ '<tr>' +'<td>' + 'Marca' + '<td>' + 'Modelo' + '<td>' + 'Anyo');
+document.write('<tr>' + '<td>' + uno.marca + '<td>' + uno.modelo + '<td>' + uno.anyo);
+document.write('<tr>' + '<td>' + dos.marca + '<td>' + dos.modelo + '<td>' + dos.anyo);
+document.write('<tr>' + '<td>' + tres.marca + '<td>' + tres.modelo + '<td>' + tres.anyo);
+document.write('<tr>' + '<td>' + cuatro.marca + '<td>' + cuatro.modelo + '<td>' + cuatro.anyo);
+
+//EJ6
+
+class Producto_alimenticio{
+
+    constructor(codigo, nombre, precio){
+
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.precio = precio;
+    }
+
+    imprimeDatos(){
+        return `Codigo: ${this.codigo}, Nombre: ${this.nombre}, Precio: ${this.precio}`;
+    }
+}
+
+const uno = new Producto_alimenticio(1, "Zanahoria", 3);
+const dos = new Producto_alimenticio(2, "Patata", 2);
+const tres = new Producto_alimenticio(3, "Lechuga", 1);
+
+var productos = [];
+
+productos[0] = uno;
+productos[1] = dos;
+productos[2] = tres;
+
+console.log(productos[0].imprimeDatos());
+console.log(productos[1].imprimeDatos());
+console.log(productos[2].imprimeDatos());
+*/
+//EJ7
+
+class obj_articulo {
+
+    constructor(desc, codigo, valor) {
+        this.desc = desc;
+        this.codigo = codigo;
+        this.valor = valor;
+    }
+
+    iva() {
+        return this.valor = this.valor + (this.valor * iva)/100;
+    }
+
+    total(reb){
+        return this.valor = this.valor - (this.valor * reb)/100;
+    }
+}
+
+var desc = document.getElementById("descripcion").value;
+var cod = parseInt(document.getElementById("codigo").value);
+var valor = parseInt(document.getElementById("valor").value);
+var iva = parseInt(document.getElementById("iva").value);
+
+const uno = new obj_articulo(desc, cod, valor);
+console.log(`Descripcion: ${uno.desc}`);
+console.log(`Codigo: ${uno.cod}`);
+console.log(`Precio con IVA: ${uno.iva()}`);
+console.log(`Precio con descuento: ${uno.total(15)}`);
