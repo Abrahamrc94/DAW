@@ -1,0 +1,18 @@
+
+
+ID Cliente: 1
+Nombre: jose
+Apellido: jose
+Telefono: jose
+
+
+ID Cliente: 2
+Nombre: jose
+Apellido: jose
+Telefono: jose
+
+
+ID Cliente: 3
+Nombre: ljkdf
+Apellido: sdlfksd
+Telefono: slkjdf
