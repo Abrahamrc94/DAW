@@ -6,14 +6,13 @@ ADD num_accesos NUMBER(3,0);
 CREATE OR REPLACE PROCEDURE EJ1
 IS
 
-CURSOR c1 IS SELECT CODIGO FROM ESTACION;
+CURSOR c1 IS SELECT ESTACION, COUNT(ESTACION) Estaciones FROM ACCESO GROUP BY ESTACION;
 aux NUMBER;
 
 BEGIN
 
 FOR v_c1 IN c1 LOOP
-    SELECT COUNT(*) INTO aux FROM ACCESO WHERE ESTACION = v_c1.CODIGO;
-    UPDATE ESTACION SET NUM_ACCESOS = aux WHERE CODIGO = v_c1.CODIGO;
+    UPDATE ESTACION SET NUM_ACCESOS = v_c1.Estaciones WHERE CODIGO = v_c1.ESTACION;
 END LOOP;
 END;
 /
@@ -28,45 +27,49 @@ END;
 CREATE OR REPLACE FUNCTION EJ2(modeloT TREN.MODELO%TYPE, vel TREN.VELOCIDAD_MAXIMA%TYPE, coch TREN.COCHERA%TYPE, entraSal IN OUT TREN.CODIGO%TYPE) RETURN NUMBER
 IS
 
-aux TREN.CODIGO%TYPE;
-fech TREN.FECHA_ENTRADA%TYPE;
+codEstacion NUMBER;
+
 BEGIN
 
-
-SELECT max(codigo)+1 INTO aux FROM TREN;
-SELECT SYSDATE INTO fech FROM DUAL;
-IF coch <= 15 THEN
-    INSERT INTO TREN(codigo, modelo, velocidad_maxima, fecha_entrada, cochera)
-    VALUES(aux, modeloT, vel, fech, coch);
-    DBMS_OUTPUT.PUT_LINE(aux);
-    RETURN 1;
-ELSE
-    RETURN 0;
-END IF;
-
-
+    SELECT ESTACION INTO codEstacion FROM COCHERA WHERE CODIGO = coch;
+    BEGIN
+        SELECT max(codigo)+1 INTO entraSal FROM TREN;
+        INSERT INTO TREN(codigo, modelo, velocidad_maxima, fecha_entrada, cochera)
+        VALUES(entraSal, modeloT, vel, sysdate, coch);
+    END;
+        RETURN 1;
+    
+    EXCEPTION
+        WHEN no_data_found THEN
+            RETURN 0;
 END;
 /
 
 SET SERVEROUTPUT ON
 DECLARE
-aux TREN.CODIGO%TYPE;
+entraSal NUMBER;
 BEGIN
-DBMS_OUTPUT.PUT_LINE(EJ2('MODELO 888', 999, 16, aux));
+    IF ((EJ2('MODELO 888', 999, 16, entraSal)) = 1) THEN
+        DBMS_OUTPUT.PUT_LINE('Introducido: ' || entraSal);
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('No existe la cochera');
+    END IF;
 END;
 /
 
 --EJ3
 
-    
-    DECLARE
-    aux TREN.CODIGO%TYPE;
-    BEGIN
-    DBMS_OUTPUT.PUT_LINE(EJ2('MODELO 888', 999, 14, aux));
-    END;
-    /
-
-
+SET SERVEROUTPUT ON
+DECLARE
+entraSal NUMBER;
+BEGIN
+    IF ((EJ2('MODELO 888', 999, 16, entraSal)) = 1) THEN
+        DBMS_OUTPUT.PUT_LINE('Introducido: ' || entraSal);
+    ELSE
+        DBMS_OUTPUT.PUT_LINE('No existe la cochera');
+    END IF;
+END;
+/
 --EJ4
 
 CREATE OR REPLACE PROCEDURE EJ4
