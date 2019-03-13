@@ -1,7 +1,7 @@
+--EJ1
+
 ALTER TABLE ESTACION
 ADD num_accesos NUMBER(3,0);
-
---EJ1
 
 CREATE OR REPLACE PROCEDURE EJ1
 IS
@@ -104,29 +104,76 @@ END;
 CREATE OR REPLACE FUNCTION EJ5(codL LINEA_ESTACION.LINEA%TYPE, codE LINEA_ESTACION.ESTACION%TYPE, numOrd LINEA_ESTACION.NUMERO_ORDEN%TYPE)RETURN NUMBER
 IS
 
-CURSOR linOrden IS SELECT NUMERO_ORDEN FROM LINEA_ESTACION;
+CURSOR linOrden IS SELECT * FROM LINEA_ESTACION;
+
+encontradoL NUMBER := 0;
+encontradoE NUMBER := 0;
+insertadoS NUMBER := 0;
 
 BEGIN
 
-IF ((codL < 1) OR (codL > 5)) THEN
-    RETURN -10;
-ELSIF((codE < 1) OR (codE > 16)) THEN
-    RETURN -20;
-ELSIF(((codL < 1) OR (codL > 5))AND((codE < 1) OR (codE > 16))) THEN
-    RETURN -40;
-ELSIF((codE > 0 AND codE < 17) AND linOrden) THEN
-    RETURN -50;
-ELSE
-    INSERT INTO LINEA_ESTACION(LINEA, ESTACION, NUMERO_ORDEN)
-    VALUES(codL, codE, numOrd);
-    RETURN 1;
-END IF;
+    FOR vlinOrden IN linOrden LOOP
+        IF(vlinOrden.LINEA = codL) THEN
+            encontradoL := 1;
+        END IF;
+        IF(vlinOrden.ESTACION = codE) THEN
+            encontradoE := 1;
+        END IF;
+        IF(vlinOrden.NUMERO_ORDEN = numOrd) THEN
+            insertadoS := 1;
+        END IF;
+    END LOOP;
+    
+    IF(encontradoL != 1 AND encontradoE = 1) THEN
+        RETURN -10;
+    ELSIF(encontradoL = 1 AND encontradoE != 1) THEN
+        RETURN -20;
+    ELSIF(encontradoL != 1 AND encontradoE != 1) THEN
+        RETURN -40;
+    ELSIF(encontradoL = 1 AND encontradoE = 1 AND insertadoS = 1) THEN
+        RETURN -50;
+    ELSE
+        INSERT INTO LINEA_ESTACION(LINEA, ESTACION, NUMERO_ORDEN)
+        VALUES(codL, codE, numOrd);
+        RETURN 1;
+    END IF;
+    
+    EXCEPTION
+    WHEN no_data_found THEN
+    DBMS_OUTPUT.PUT_LINE('ERROR');
+    
 END;
 /
 
 SET SERVEROUTPUT ON
 BEGIN
-DBMS_OUTPUT.PUT_LINE(EJ5(1, 5, 11));
+DBMS_OUTPUT.PUT_LINE(EJ5(410, 40, 1));
 END;
 /
 
+--TRIGGER 1
+
+--TRIGGER 2
+CREATE OR REPLACE TRIGGER EJ2
+BEFORE INSERT ON LINEA
+FOR EACH ROW
+BEGIN
+    :new.nombre := upper(:new.nombre);
+    :new.cobertura := upper(:new.cobertura);
+END;
+/
+
+--TRIGGER 3
+CREATE TABLE USUARIOS (
+usuario VARCHAR2(20),
+fecha DATE
+);
+
+CREATE OR REPLACE TRIGGER EJ3
+BEFORE INSERT OR UPDATE OR DELETE ON TREN
+FOR EACH ROW
+BEGIN
+    INSERT INTO CONTROL (usuario, fecha)
+    VALUES(USER,SYSDATE);
+END;
+/
