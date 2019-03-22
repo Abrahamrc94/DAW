@@ -40,7 +40,7 @@
         }else if($v1 > 0 && $v2 > $v1){
             echo $apellido;
         }else{
-            echo $nombre + ' ' + $apellido;
+            echo $nombre . ' ' . $apellido;
         }
         print "<br>";
         
