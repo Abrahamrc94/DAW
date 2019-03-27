@@ -129,3 +129,81 @@ BEGIN
 DBMS_OUTPUT.PUT_LINE(EJER3('111-A', 'E-1'));
 END;
 /
+
+--2.1 ---------------------------------------------------------------------------------------------------------------------------------------
+
+ALTER TABLE ASIGNATURAS
+ADD NALUMNOS NUMBER(2) DEFAULT 0;
+
+CREATE OR REPLACE PROCEDURE EJER2_1
+IS
+
+vNum NUMBER (2) := 0;
+vCod NUMBER (2) := 0;
+
+CURSOR uno IS SELECT COD, COUNT(ALUMNOS.DNI) AS NALUMNOS FROM ALUMNOS, NOTAS WHERE ALUMNOS.DNI = NOTAS.DNI GROUP BY COD;
+
+BEGIN
+
+FOR v_uno IN uno LOOP
+    vNum := v_uno.NALUMNOS;
+    vCod := v_uno.COD;
+
+    UPDATE ASIGNATURAS
+    SET NALUMNOS = vNum
+    WHERE COD = vCod;
+END LOOP;
+
+END;
+/
+
+SET SERVEROUTPUT ON
+BEGIN
+EJER2_1();
+END;
+/
+
+CREATE OR REPLACE TRIGGER EJER2_1
+AFTER INSERT OR DELETE OR UPDATE ON NOTAS
+FOR EACH ROW
+BEGIN
+
+    IF INSERTING THEN
+        UPDATE ASIGNATURAS
+        SET NALUMNOS = NALUMNOS + 1
+        WHERE COD = :new.COD;
+    ELSIF DELETING THEN
+        UPDATE ASIGNATURAS
+        SET NALUMNOS = NALUMNOS - 1
+        WHERE COD = :old.COD;
+    ELSE
+        UPDATE ASIGNATURAS
+        SET NALUMNOS = NALUMNOS - 1
+        WHERE COD = :old.COD;
+        
+        UPDATE ASIGNATURAS
+        SET NALUMNOS = NALUMNOS + 1
+        WHERE COD = :new.COD;
+    END IF;
+END;
+/
+
+--2.2 ---------------------------------------------------------------------------------------------------------------------------------------
+
+ALTER TABLE ALUMNOS
+ADD NOMBRE VARCHAR2(20);
+
+ALTER TABLE ALUMNOS
+ADD APELLIDO VARCHAR2(50);
+
+CREATE OR REPLACE TRIGGER EJER2_2
+AFTER INSERT OR DELETE OR UPDATE ON ALUMNOS
+FOR EACH ROW
+BEGIN
+    IF INSERTING THEN
+        UPDATE ALUMNOS
+        SET NOMBRE = :new.APENOM
+        
+--SELECT SUBSTR(APENOM, 1, CHARINDEX(',', APENOM, 1)) AS APELLIDO,
+--SUBSTR(APENOM, CHARINDEX(',', APENOM, 1), 10) AS NOMBRE
+--FROM ALUMNOS;
